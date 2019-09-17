@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package demoservice;
+
+service DemoService {
+  // Obtains the data at a given position.
+  rpc GetData(Input) returns (Output) {}
+
+  // Obtains the data1 at a given position.
+  rpc GetData1(Input) returns (Output) {}
+}
+
+message Input {
+  int32 requestId = 1;
+}
+
+message Output {
+  int32 responseId = 1;
+}
