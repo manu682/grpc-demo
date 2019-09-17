@@ -135,9 +135,9 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DemoServiceClient interface {
-	// Obtains the feature at a given position.
+	// Obtains the data at a given position.
 	GetData(ctx context.Context, in *Input, opts ...grpc.CallOption) (*Output, error)
-	// Obtains the feature at a given position.
+	// Obtains the data1 at a given position.
 	GetData1(ctx context.Context, in *Input, opts ...grpc.CallOption) (*Output, error)
 }
 
@@ -169,9 +169,9 @@ func (c *demoServiceClient) GetData1(ctx context.Context, in *Input, opts ...grp
 
 // DemoServiceServer is the server API for DemoService service.
 type DemoServiceServer interface {
-	// Obtains the feature at a given position.
+	// Obtains the data at a given position.
 	GetData(context.Context, *Input) (*Output, error)
-	// Obtains the feature at a given position.
+	// Obtains the data1 at a given position.
 	GetData1(context.Context, *Input) (*Output, error)
 }
 

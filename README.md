@@ -21,18 +21,37 @@ In the gRPC server, use the struct that is auto-generated for this - Unimplement
 ## Solution
 
 Use struct composition on the existing struct to embed the auto-generated struct.
-This will ensure that any addition of a new RPC will automatcially have an unimplemented response auto-generated for it.
+This will ensure that any addition of a new RPC will automatically have an unimplemented response auto-generated for it.
 
 `... type demoServiceServer struct { pb.UnimplementedDemoServiceServer } ... pb.RegisterDemoServiceServer(myServer, &demoServiceServer{}) ...`
 
-## To generate the pb file from the proto definition
+## Commands
+
+### To generate the pb file from the proto definition
 
 `protoc -I demoservice demoservice.proto --go_out=plugins=grpc:demoservice`
 
-## To start the gRPC server
+### To start the gRPC server
 
 `go run .\servermain.go`
 
-## To start the gRPC client
+Output:
+In... server...
+Running the server...
 
-`go run .\client\client.go`
+### To start the gRPC client that calls the implemented method
+
+`go run .\client_impl\client_impl.go`
+
+Output:
+In.... client...
+responseId:10
+
+### To start the gRPC client that calls the un-implemented method
+
+`go run .\client_nonimpl\client_nonimpl.go`
+
+Output:
+In.... client...
+Error : &{0xc000047c00} rpc error: code = Unimplemented desc = method GetData1 not implemented
+<nil>

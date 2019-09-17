@@ -8,7 +8,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	pb "grpc-middleware-demo/demoservice"
+	pb "grpc-demo/demoservice"
 )
 
 var (
