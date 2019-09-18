@@ -23,7 +23,7 @@ In the gRPC server registration, use the struct that is auto-generated for this 
 Use struct composition on the existing struct to embed the auto-generated struct.
 This will ensure that any addition of a new RPC will automatcially have an unimplemented response auto-generated for it.
 
-`... type demoServiceServer struct { pb.UnimplementedDemoServiceServer } ... pb.RegisterDemoServiceServer(myServer, &demoServiceServer{}) ...`
+`...  type demoServiceServer struct { pb.UnimplementedDemoServiceServer }  ...  pb.RegisterDemoServiceServer(myServer, &demoServiceServer{}) ...`
 
 ## To generate the pb file from the proto definition
 
