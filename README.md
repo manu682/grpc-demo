@@ -9,7 +9,7 @@ This repo has a gRPC client and server that is used for showcasing how Golang st
 
 ## Solution
 
-In the gRPC server, use the struct that is auto-generated for this - UnimplementedDemoServiceServer
+In the gRPC server registration, use the struct that is auto-generated for this - UnimplementedDemoServiceServer
 
 `... pb.RegisterDemoServiceServer(myServer, &pb.UnimplementedDemoServiceServer{}) ...`
 
