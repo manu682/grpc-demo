@@ -9,7 +9,7 @@ This repo has a gRPC client and server that is used for showcasing how Golang st
 
 ## Solution
 
-In the gRPC server, use the struct that is auto-generated for this - UnimplementedDemoServiceServer
+In the gRPC server registration, use the struct that is auto-generated for this - UnimplementedDemoServiceServer
 
 `... pb.RegisterDemoServiceServer(myServer, &pb.UnimplementedDemoServiceServer{}) ...`
 
@@ -23,7 +23,7 @@ In the gRPC server, use the struct that is auto-generated for this - Unimplement
 Use struct composition on the existing struct to embed the auto-generated struct.
 This will ensure that any addition of a new RPC will automatically have an unimplemented response auto-generated for it.
 
-`... type demoServiceServer struct { pb.UnimplementedDemoServiceServer } ... pb.RegisterDemoServiceServer(myServer, &demoServiceServer{}) ...`
+`...  type demoServiceServer struct { pb.UnimplementedDemoServiceServer }  ...  pb.RegisterDemoServiceServer(myServer, &demoServiceServer{}) ...`
 
 ## Commands
 
