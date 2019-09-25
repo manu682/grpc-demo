@@ -1,6 +1,6 @@
 # A Sample gRPC server/client
 
-This repo has a gRPC client and server that is used for showcasing how Golang struct composition can be used for doing a forward compatible RPC definition without breaking the code.
+This repo has a gRPC client and server that is used for showcasing how Golang struct composition/type enbedding can be used for doing a forward compatible RPC definition without breaking the code.
 
 ## Case 1
 
