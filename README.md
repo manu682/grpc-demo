@@ -25,7 +25,7 @@ pb.RegisterDemoServiceServer(myServer, &pb.UnimplementedDemoServiceServer{})
 ## Solution
 
 Use struct composition on the existing struct to embed the auto-generated struct.
-This will ensure that any addition of a new RPC will automatcially have an unimplemented response auto-generated for it.
+This will ensure that any addition of a new RPC will automatically have an unimplemented response auto-generated for it.
 
 <pre>
 ...
