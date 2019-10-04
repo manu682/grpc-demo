@@ -15,7 +15,7 @@ var (
 	port = ":5000"
 )
 
-// Note the struct composition of the auto-generated "pb.UnimplementedDemoServiceServer"
+// Note the embedded struct "pb.UnimplementedDemoServiceServer", which is auto-generated
 type demoServiceServer struct {
 	pb.UnimplementedDemoServiceServer
 }
